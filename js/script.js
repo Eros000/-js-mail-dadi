@@ -1,15 +1,3 @@
-const form = document.querySelector('form');
-
-
-form.addEventListener ('click',
-
-    function (event){
-        event.preventDefault();
-        console.log('form sottomesso')
-    }
-
-)
-
 const emailList = [
     
     'pippo@gmail.com', 
@@ -21,22 +9,58 @@ const emailList = [
     'bruce@gmail.com', 
 ]
 
-
-const myEmail = document.getElementById('my-email').value;
-
-console.log(myEmail)
+const form = document.getElementById('my-form');
 
 
+form.addEventListener ('submit',
 
-if (myEmail === emailList){
+    function (event){
+        event.preventDefault();
+        
+        const myEmail = document.getElementById('my-email').value;
 
-    const text = document.createElement('p')
-    text.innerHTML = ('email cooretta')
-    text.append (['my-password'])
-}
-else {
-    console.log('NO submit')
-}
+        console.log('myEmail', myEmail, typeof myEmail);
+
+        let access = false;
+
+        for (let i = 0; i < emailList.length; i++) {
+            console.log(i, emailList)
+
+            if (myEmail === emailList[i]) {
+                access = true
+            }
+        }
+
+        const messageh2 = document.getElementById('message');
+
+        if (access){
+            messageh2.innerHTML = 'Accesso consentito!'
+        }
+        else {
+            messageh2.innerHTML = 'Accesso negato!'
+        }
+
+    }
+
+
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
