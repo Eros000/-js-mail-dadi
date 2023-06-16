@@ -1,5 +1,14 @@
+const form = document.querySelector('form');
 
 
+form.addEventListener ('click',
+
+    function (event){
+        event.preventDefault();
+        console.log('form sottomesso')
+    }
+
+)
 
 const emailList = [
     
@@ -15,21 +24,22 @@ const emailList = [
 
 const myEmail = document.getElementById('my-email').value;
 
+console.log(myEmail)
+
+
+
 if (myEmail === emailList){
-    
+
+    const text = document.createElement('p')
+    text.innerHTML = ('email cooretta')
+    text.append (['my-password'])
+}
+else {
+    console.log('NO submit')
 }
 
 
 
 
-const form = document.querySelector('form');
 
-form.addEventListener ('click',
-
-    function (event){
-        event.preventDefault();
-        
-    }
-
-)
 
